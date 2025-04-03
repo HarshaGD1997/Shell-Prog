@@ -5,14 +5,15 @@ read m
 echo "Enter N : "
 read n
 
+flag_val=0;
 
 for ((i=m; i<=n; i++)); do
 	if((i==1)); then
 		echo "1 is not prime nor composite"
-		i=2;			
+		continue			
 	fi
-	for((j=2; j<i; j++)); do
-
+	#for((j=2; j<i; j++)); do
+	for((j=2; j*j<=i; j++)); do # To reduce the computation we would check till sqrt(j) 
 		
 		if((i%j == 0)); then
 			flag_val=1
