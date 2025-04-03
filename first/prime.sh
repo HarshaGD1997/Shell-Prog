@@ -8,7 +8,7 @@ read n
 
 for ((i=m; i<=n; i++)); do
 	if((i==1)); then
-		echo "1 is not prime nor consonent"
+		echo "1 is not prime nor composites"
 		i=2;			
 	fi
 	for((j=2; j<i; j++)); do
