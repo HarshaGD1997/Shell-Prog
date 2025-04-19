@@ -1,6 +1,23 @@
 #!/bin/bash
 
-echo "Enter the number :"; read num
+sum_of_digits(){
+	local n=$1
+	if (( n == 0 )); then
+		echo 0
+	else
+		local digit=$(( n % 10))
+		local rest=$(( n/10 ))
+		local rec_sum=$(sum_of_digits $rest)
+		echo $(( digit + rec_sum ))
+	fi
+}
+
+echo "Enter number"
+read num
+
+echo "sum of digits without loop is "
+sum_of_digits "$num"
+
 
 copy_val=num
 sum=0
